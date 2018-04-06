@@ -1,0 +1,20 @@
+zuul:
+  routes:
+    get:
+      path: /get/**
+      url: http://httpbin.org/get
+    links:
+      path: /links/**
+      url: http://httpbin.org/links
+    images:
+      path: /image/**
+      url: http://httpbin.org/image
+    accounts:
+      path: /accounts/**
+      serviceId: ACCOUNTS-SERVICE
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+    enabled: true
